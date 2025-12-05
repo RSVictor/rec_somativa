@@ -1,0 +1,298 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1764895297699
+  modified: 1764895297699
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/registrar/
+    name: Registrar
+    meta:
+      id: req_9224c11df3b04822aa52d13ebd9c71e6
+      created: 1764447240752
+      modified: 1764897777521
+      isPrivate: false
+      description: ""
+      sortKey: -1764447240752
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "admin@admin.com",
+          "password": "123456",
+          "nome": "Ribeiro",
+          "endereco": "Rua Teste 123",
+          "cpf": "12349975770",
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Cliente
+    meta:
+      id: fld_89eb2e78a11446538ab7cf9817ad963d
+      created: 1764437315486
+      modified: 1764437315486
+      sortKey: -1764437315486
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/produtos/
+        name: LISTAR PRODUTOS
+        meta:
+          id: req_44167f4cc27c4fe8b3a37e3834d05a87
+          created: 1764430156572
+          modified: 1764437342586
+          isPrivate: false
+          description: ""
+          sortKey: -1764437325506.75
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/carrinho/add/
+        name: ADD CARRINHO
+        meta:
+          id: req_391b942450884173abbc721548012b69
+          created: 1764432526064
+          modified: 1764551566937
+          isPrivate: false
+          description: ""
+          sortKey: -1764437325513
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "produto_id": 1,
+              "quantidade": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NTUxODQ3LCJpYXQiOjE3NjQ1NTE1NDcsImp0aSI6IjM2ZDJkOTk2N2Q4YjRjMzFhMmJiMmNmNzdjNTA4MjBiIiwidXNlcl9pZCI6ImpvYW9Ac2lsdmEuY29tIn0.TZlsXtqPN4DDMcZ8ZXolwCL7ZvkszxnISO3JetHZjN4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/ingredientes
+        name: CRIAR PEDIDO
+        meta:
+          id: req_80a495dafc294b6cb63268f88b73d7e7
+          created: 1764432845487
+          modified: 1764897793885
+          isPrivate: false
+          description: ""
+          sortKey: -1764437325538
+        method: POST
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NTUzMjc0LCJpYXQiOjE3NjQ1NTI5NzQsImp0aSI6IjhhMDk0MWUzMzM4MTRkZGRiY2EzMDAzY2M4ZGQ5MDg5IiwidXNlcl9pZCI6ImpvYW9Ac2lsdmEuY29tIn0.6z4T4raeX-YPtsopDQw5YBCGHUMJuz-aRuIN_lsUmMo
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/produto/avaliar/
+        name: AVALIAR
+        meta:
+          id: req_5d78c1dc56364b119c9ec2bec9cb8a0d
+          created: 1764433481891
+          modified: 1764897804539
+          isPrivate: false
+          description: ""
+          sortKey: -1764437325488
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "pedido_id": 1,
+              "produto_id": 1,
+              "nota": {% now 'iso-8601', '' %}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NTUyNTgxLCJpYXQiOjE3NjQ1NTIyODEsImp0aSI6ImVmNTg2Y2MxNzU4YTRmMTU5MjYwYTgyYjczMGUwNjA3IiwidXNlcl9pZCI6ImpvYW9Ac2lsdmEuY29tIn0.RF63UmkiEa3HtDjGXH3wn6lIFXucFtHwSHvHVEAQUFY
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/login/
+        name: LOGIN
+        meta:
+          id: req_4e3d17bae6a449a092494ac833f3c5a5
+          created: 1764547792153
+          modified: 1764549306838
+          isPrivate: false
+          description: ""
+          sortKey: -1764437325491.125
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "joao@silva.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDcwNDAxLCJpYXQiOjE3NjQ0NzAxMDEsImp0aSI6IjAyZDVkYWU5OGRkYTQwNmQ4NzhlYzU5NGY1YTA3NGY1IiwidXNlcl9pZCI6ImNhdWFAc2lsdmEuY29tIn0.zeCs6HWKoVjjCn4x1U_Kq1atFatWp4bHYYpVBXwDXMU
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Funcionario
+    meta:
+      id: fld_c8c1b9619b994918889d66eb68c1b47a
+      created: 1764437564940
+      modified: 1764895389663
+      sortKey: -1764437564940
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/login/
+        name: LOGIN
+        meta:
+          id: req_1a54dcb3ed1b4606a1fd200658b10161
+          created: 1764430230613
+          modified: 1764550194182
+          isPrivate: false
+          description: ""
+          sortKey: -1764544984301
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "caua@silva.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDcwNDAxLCJpYXQiOjE3NjQ0NzAxMDEsImp0aSI6IjAyZDVkYWU5OGRkYTQwNmQ4NzhlYzU5NGY1YTA3NGY1IiwidXNlcl9pZCI6ImNhdWFAc2lsdmEuY29tIn0.zeCs6HWKoVjjCn4x1U_Kq1atFatWp4bHYYpVBXwDXMU
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/pedido/status/
+        name: STATUS PEDIDO
+        meta:
+          id: req_ef188ec1f6cc4e32837f4fa3d1cf01e1
+          created: 1764544984201
+          modified: 1764897790231
+          isPrivate: false
+          description: ""
+          sortKey: -1764544984201
+        method: POST
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NTUyNDM0LCJpYXQiOjE3NjQ1NTIxMzQsImp0aSI6IjRjMGE0ODFlZmM4MTRhOGNhOWNlNGNiMmViZDNmZWI1IiwidXNlcl9pZCI6ImNhdWFAc2lsdmEuY29tIn0.qQ-Hy4DiNATetSmWDXTaY6VCN5-m8R9KKNBgVWpk_P4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1764895307438
+    modified: 1764895307438
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1764895307433
+    modified: 1764895307433
+    isPrivate: false
